@@ -10,7 +10,7 @@
     <h1>List of my friends</h1>
 
     <ul id="list" class="list-group">
-        <li class="list-group-item">Example</li>
+        <!-- <li class="list-group-item">Example</li> -->
     </ul>
 
 </div>
@@ -27,12 +27,23 @@
 let arr = ["Tom", "Steve", "Bill", "Rita", "Pete", "Ashley"];
 const list = document.getElementById('list');
 
-// Сигнатура map
-function map(list, fn){
-    // todo
+
+const mapToHtmlEl = (el) => { 
+  const newEl = document.createElement("li");
+  newEl.classList.add("list-group-item");
+  list.appendChild(newEl);
+  newEl.innerHTML = el;
+  return newEl;
 }
 
 
+// Сигнатура map
+function map(el, fn) {
+  let res = el.sort().map(fn)
+  return res
+}
+
+map(arr, mapToHtmlEl)
 
 </script>
 
