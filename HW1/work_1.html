@@ -27,7 +27,7 @@
 let arr = ["Tom", "Steve", "Bill", "Rita", "Pete", "Ashley"];
 const list = document.getElementById('list');
 
-
+// создает <li> в каждом <ul>
 const mapToHtmlEl = (el) => { 
   const newEl = document.createElement("li");
   newEl.classList.add("list-group-item");
@@ -37,7 +37,7 @@ const mapToHtmlEl = (el) => {
 }
 
 
-// Сигнатура map
+// сортирует массив и map-ает в созданные li из функции выше 
 function map(el, fn) {
   let res = el.sort().map(fn)
   return res
