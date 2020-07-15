@@ -79,6 +79,7 @@ mapAges(ages)
 
 // вешаем ивент на выбор возраста
 usersAge.onchange = function() {
+  selectedUsers.innerHTML = "";
   // сохраняем значение выбора возраста 
     let click = this.options[this.selectedIndex].text
     // распечатываем массив с юзерами
